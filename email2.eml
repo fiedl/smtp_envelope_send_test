@@ -1,0 +1,46 @@
+DomainKey-Status: no signature
+Return-Path: <no-reply@example.com>
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+	example.com
+X-Spam-Level: *
+X-Spam-Status: No, score=1.1 required=7.0 tests=BAYES_20,HTML_MESSAGE,
+	HTML_MIME_NO_HTML_TAG,MIME_HTML_ONLY,RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2
+	autolearn=no autolearn_force=no version=3.4.0
+X-Original-To: test1@example.com
+Delivered-To: sebastian@example.com
+Received: from mout.example.com (mout.example.com [___.___.___.___])
+	by ___-___-___-___.example.com (Postfix) with ESMTPS id 9CF9D2183C3E
+	for <test1@example.com>; Tue, 19 Jul 2016 10:58:06 +0200 (CEST)
+Received: from wingolfsplattform.org ([___.___.___.___]) by
+ mrelayeu.example.com (mreue101) with ESMTPSA (Nemesis) id
+ 0MN3u4-1bRdmS3cls-006dqK; Tue, 19 Jul 2016 10:58:16 +0200
+Date: Tue, 19 Jul 2016 10:58:16 +0200
+From: no-reply@example.com
+To: test1@example.com,
+ test2@example.com
+Message-ID: <578deba89a17a_a9963fc03d03f9e86894d@fiedl-mbp.mail>
+Subject: Test
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+smtp-envelope-to: test2@example.com
+X-Provags-ID: V03:K0:CnOvJbUlUjrvfpLUQlQD+WWqULK9kYY4JlzlWMEL4ki8GSOm1lt
+ SFjNbzHj16BtuhZd7Nt+iHX6Pburh6JaB4++efOmzQYcnjb+AjfHsf6ssXd5BSQeh2xANw3
+ UKOkp4zQ4qPHFei10iqhIyYuv7SOTLDvCBBU3TWj5GxobRbqqkNXUrEz4czRqRbJnPHtrkO
+ 0jq4+yZ0pFyzmq18xJJjw==
+X-UI-Out-Filterresults: notjunk:1;V01:K0:vTPyxBUKV3w=:AqYvibVEXQ03Em3RUFZkYp
+ z9g2usEw+vvVHpP0em+FVGeieFP2tEuDkuIzsd/+nRUqDc3pJrsDJei7lYYwOv5UozgLkSvNz
+ LeckIfEKlpvpKNjcygEFkSyMtPxCs7+CoLK9cHZiZCWspDp167OLw6NwdynH3+BeaLECmGLP3
+ bNWenjOkp7shXnCXEoAWErjj9FsWfyXvWVnoh0gR2zJyqj8gupaaRSWlc5vNh1cB02uE8lbGY
+ AzP4Yidp7Aza7CgZx+FoEDpiXUaNC+Wjk8hgKEqdkLAlULWPgbmvky2LhzCfNZa04DYG6sHcN
+ gjI3ygdeqNcdds42BL12Qwj5qzEazJ0WZGAsFzHLleg3IvTKTvTsgwFdaBuvehGTLij2a9ODT
+ L7auCK7KHklYu46kYHRQ+Fhheof4JQwBNyJS2+xekGVUv66t3sNQ7vSdpjJ+DvybYwu23y04C
+ Tk21YPzTujzkM2PNB/QV/EcuuC/5vR/RSqS+rX5eRDmIe1SKUbIahW5rNYre+AhQfk3MwuHoR
+ npEgfZH0OoKeOsMmBqEpymLYM3oJQ/H1SJ3UOZq2ho57I5rUX9/6Qotn5oU7WojmOz9ODhawo
+ Z6QjPZ3rSMC12nyjAcai4wk7y69zB3Z3hpfMamyR7KKmTaaUNN6hRX3dbXUrgHGBZXl5iXsKl
+ AFQboGGAYgHqtn8jBOHOvsxcOdht9sNe9/F0XFOFnPt9+4wUMGwvAusIjrJkaDN43+rrXKojt
+ sITRdkWfknUJJh5q3Iorjf8w2V+wounqxaq/ROBPhX0+Qaw908Br80cJUPh/9ZLfng3CZQLUT
+ PIGyXyx
+
+This is a test.

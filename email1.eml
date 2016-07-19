@@ -1,0 +1,46 @@
+DomainKey-Status: no signature
+Return-Path: <no-reply@example.com>
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+	example.com
+X-Spam-Level: *
+X-Spam-Status: No, score=1.1 required=7.0 tests=BAYES_20,HTML_MESSAGE,
+	HTML_MIME_NO_HTML_TAG,MIME_HTML_ONLY,RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2
+	autolearn=no autolearn_force=no version=3.4.0
+X-Original-To: test1@example.com
+Delivered-To: sebastian@example.com
+Received: from mout.example.com (mout.example.com [___.___.___.___])
+	by ___-___-___-___.example.com (Postfix) with ESMTPS id 270EE2183C3E
+	for <test1@example.com>; Tue, 19 Jul 2016 10:58:06 +0200 (CEST)
+Received: from wingolfsplattform.org ([___.___.___.___]) by
+ mrelayeu.example.com (mreue103) with ESMTPSA (Nemesis) id
+ 0M7VWZ-1bBDh91xrT-00xIKv; Tue, 19 Jul 2016 10:58:16 +0200
+Date: Tue, 19 Jul 2016 10:58:15 +0200
+From: no-reply@example.com
+To: test1@example.com,
+ test2@example.com
+Message-ID: <578deba7d7421_a9963fc03d03f9e8688c7@fiedl-mbp.mail>
+Subject: Test
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+smtp-envelope-to: test1@example.com
+X-Provags-ID: V03:K0:nvhwlurRx2RI8la2V+he9CtlBKkJBfut8sIucnc8lmqPSduo/mk
+ HjJVD08b5yagLNOdz3CEXCgmXqvqRPi05L4SveJyyRZwG3sJmvRS+6LAtaab5fABSEhZ/Nf
+ CYiW5FPoZsq1tc6SrvLt7Fu5hhZi0WH+4eZdBTkzpDXCTP6oImYn2IFPrCM8UflcoUnw+Po
+ zqOX/YqA7dIZm3Lf2O22Q==
+X-UI-Out-Filterresults: notjunk:1;V01:K0:we1aQuAx2Rk=:CdypLd5tBaiK6kCROKcE3p
+ JVC7TW1oy1a0qWhSwbSkZQl5+DxUSjRR75wyOnnmNWpg5OnIeuKVUftb+Itfab+3ZXYMKWXBR
+ ETTcQxfcPBxQ2a80Hy6gfjCpzOn1sE4RlRKOo5k0lKUOGVmDbxzdQvHzIkkiCCiqgeMYdN+BC
+ rFSIKLif3eZIp+I8JriIU5FaIYMJQnpQtxh80B4aqFBpd7adSr4OXSJTqaLiGqAnReB8dYVys
+ hpYIlK8727kYep2lKXlNYw+lXkCa/n4bMlRGA6ccUnWV2vOjJfUfvflpok3dC4C31MY0wJu5J
+ +CoF6rq1Alk9628ifI24toHTYPtIPmOKfJ+PQ8ND28BVsgNuqp9jGh2miD1wnMY8l1wme5qhP
+ y7CysyD6je7IfAIXehYA66BMEjI3b4Ydj1IA1K+3RCRbfXB1zWfYYpUm+Y9Hmg2nFUIN+0/9Q
+ LrWbkqOVPyJPMJP4COOk9iY+xExKqmDNwWSfDxf75y8QpcNI5EZuua13jO3XNtM5JVKgZsZ6t
+ q2AEymeMXEYuUQSPwU0uEHEQk6RSr2c0qZ5WnFEs40hhM5/N5wD7zm2VjCk5tp8/od5Huo+WV
+ dtYD15mj7dXlBGoMjFRi5ZX7XVcKsJONwiftX1G49OnnRZKh6F+w2SZfsheBbjJbEk2JvONuG
+ wtp51SCYrgMXb8f2ugvMiQ/p/Ll4PpFBk6+M3sBhqjX0P4qHSHCpdMI8ehZ73Nd16t1skPSJ4
+ 06FEfHPvs0UXqebYeLFDoH1aL9nKJ7vnZ5nLuuM/5F4ur8aWejdq4I5GIz5XL3sTC1lwUo61L
+ x+8vC8s
+
+This is a test.
