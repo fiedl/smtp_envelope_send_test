@@ -4,6 +4,7 @@ task :emails => [:environment] do
 
   recipients.each do |recipient|
     mail = TestMailer.test_mail(to: recipients, smtp_envelope_to: recipient)
+    mail.smtp_envelope_to = recipient if ENV['USE_SMTP_ENVELOPE_TO_SETTER']
     log_mail(mail, recipient)
     mail.deliver
   end

@@ -204,3 +204,116 @@ As one can see, the first email has `smtp-envelope-to: test1@example.com` in its
 
 Be aware that the header field `smtp-envelope-to` is just a copy of the real smtp envelope field. The mail servers do not look at the header fields but at the real smtp envelope.
 
+## Workaround
+
+When using the `Mail::Message#smtp_envelope_to=` setter, only one email is received by each of the recipients.
+
+```ruby
+# lib/tasks/emails.rake
+
+task :emails => [:environment] do
+  recipients = ENV['RECIPIENTS'].split(",")
+
+  recipients.each do |recipient|
+    mail = TestMailer.test_mail(to: recipients, smtp_envelope_to: recipient)
+    mail.smtp_envelope_to = recipient if ENV['USE_SMTP_ENVELOPE_TO_SETTER']
+    log_mail(mail, recipient)
+    mail.deliver
+  end
+end
+```
+
+Send like this:
+
+```bash
+cd ~/rails/smtp_envelope_send_test
+bin/rake emails RECIPIENTS=test1@example.com,test2@example.com USE_SMTP_ENVELOPE_TO_SETTER=true
+```
+
+## How do *rails* and *mail* interact?
+
+The `mail` method used in the `TestMailer` is defined [here, `ActionMailer::Base#mail` ](https://github.com/rails/rails/blob/4-2-stable/actionmailer/lib/action_mailer/base.rb#L800).
+
+As one can see there, the `smtp_envelope_to` is passed to the `Mail::Message` object like this:
+
+```ruby
+def mail(headers = {}, &block)
+  # ...
+  m = @_message
+  headers.except(...).each { |k, v| m[k] = v }
+end
+```
+
+The `smtp_envelope_to` value is passed using `[]=`.
+
+The [documentation of `Mail::Message`](https://github.com/mikel/mail/blob/master/lib/mail/message.rb) reads:
+
+>        ===Making an email via assignment
+>
+>        You can assign values to a mail object via four approaches:
+>
+>        * Message#field_name=(value)
+>        * Message#field_name(value)
+>        * Message#['field_name']=(value)
+>        * Message#[:field_name]=(value)
+>
+>        Examples:
+>
+>         mail = Mail.new
+>         mail['from'] = 'mikel@test.lindsaar.net'
+>         mail[:to]    = 'you@test.lindsaar.net'
+>         mail.subject 'This is a test email'
+>         mail.body    = 'This is a body'
+>
+>         mail.to_s #=> "From: mikel@test.lindsaar.net\r\nTo: you@...
+
+[The `[]=` method](https://github.com/mikel/mail/blob/master/lib/mail/message.rb#L1306) just sets the header field, but does not pass it to `#smtp_envelope_to=`.
+
+```ruby
+# mikel/mail: lib/mail/message.rb
+
+    def []=(name, value)
+      if name.to_s == 'body'
+        self.body = value
+      elsif name.to_s =~ /content[-_]type/i
+        header[name] = value
+      elsif name.to_s == 'charset'
+        self.charset = value
+      else
+        header[name] = value
+      end
+    end
+
+    def smtp_envelope_to=( val )
+      @smtp_envelope_to =
+        case val
+        when Array, NilClass
+          val
+        else
+          [val]
+        end
+    end
+```
+
+Therefore, `mail[:smtp_envelope_to] = ...` and `mail.smtp_envelope_to = ...` are not equivalent, which explains the observed behavior.
+
+## Is this a bug?
+
+The parameter of `def mail(headers = {}, &block)` is called "`headers`". In fact, the `smtp-envelope-to` header is set correctly, as seen in the results section above. Thus, the method does what can be expected from the definition.
+
+Nevertheless, the smtp envelope itself is not set.
+
+Considering that the `mail` parameter in Rails is called "`headers`" and that the `Mail::Message#smtp_envelope_to=` and `Mail::Message#[:smtp_envelope_to]=` are not equivalent, I'd tend to try to resolve this in [mail](https://github.com/mikel/mail) rather than in [rails](https://github.com/rails/rails).
+
+To discuss whether this is considered a bug, see this issue:
+https://github.com/mikel/mail/issues/1015
+
+In the meantime, as a [workaround](#workaround), the `Mail::Message#smtp_envelope_to=` setter can be used manually:
+
+```ruby
+recipients.each do |recipient|
+  mail = TestMailer.test_mail(to: recipients, smtp_envelope_to: recipient)
+  mail.smtp_envelope_to = recipient
+  mail.deliver
+end
+```
